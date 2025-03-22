@@ -1,0 +1,159 @@
+2025-03-22 12:01:32,073:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-03-22 12:01:32,074:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-03-22 12:01:32,074:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-03-22 12:01:32,074:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-03-22 12:01:34,317:INFO:Initializing load_model()
+2025-03-22 12:01:34,317:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:01:41,995:INFO:Initializing load_model()
+2025-03-22 12:01:41,995:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:02:03,822:INFO:Initializing load_model()
+2025-03-22 12:02:03,823:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:02:18,693:INFO:Initializing load_model()
+2025-03-22 12:02:18,694:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:02:40,882:INFO:Initializing load_model()
+2025-03-22 12:02:40,883:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:02:42,310:INFO:Initializing load_model()
+2025-03-22 12:02:42,310:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:02:45,395:INFO:Initializing load_model()
+2025-03-22 12:02:45,395:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:02:51,299:INFO:Initializing load_model()
+2025-03-22 12:02:51,300:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:03:04,322:INFO:Initializing load_model()
+2025-03-22 12:03:04,323:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:03:24,887:INFO:Initializing load_model()
+2025-03-22 12:03:24,887:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:03:36,234:INFO:Initializing load_model()
+2025-03-22 12:03:36,234:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:03:45,163:INFO:Initializing load_model()
+2025-03-22 12:03:45,163:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:04:11,578:INFO:Initializing load_model()
+2025-03-22 12:04:11,578:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:04:14,690:INFO:Initializing load_model()
+2025-03-22 12:04:14,690:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:04:14,923:INFO:Initializing predict_model()
+2025-03-22 12:04:14,923:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001D1FD5BE690>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['SeniorCitizen', 'tenure',
+                                             'MonthlyCharges'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=['customerID', 'gender', 'Partner',
+                                             'Dependents', 'PhoneServ...
+                                                                    'PaymentMethod'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['customerID', 'TotalCharges'],
+                                    transformer=TargetEncoder(cols=['customerID',
+                                                                    'TotalCharges'],
+                                                              handle_missing='return_nan'))),
+                ('trained_model',
+                 BaggingClassifier(estimator=KNeighborsClassifier(n_jobs=-1),
+                                   max_features=0.6, max_samples=0.4,
+                                   random_state=5440))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001D1FBD31A80>)
+2025-03-22 12:04:14,923:INFO:Checking exceptions
+2025-03-22 12:04:14,924:INFO:Preloading libraries
+2025-03-22 12:04:14,926:INFO:Set up data.
+2025-03-22 12:04:14,942:INFO:Set up index.
+2025-03-22 12:06:56,658:INFO:Initializing load_model()
+2025-03-22 12:06:56,659:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:07:07,999:INFO:Initializing load_model()
+2025-03-22 12:07:08,000:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:07:45,634:INFO:Initializing load_model()
+2025-03-22 12:07:45,634:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:07:51,478:INFO:Initializing load_model()
+2025-03-22 12:07:51,478:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:07:52,540:INFO:Initializing load_model()
+2025-03-22 12:07:52,540:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:07:56,567:INFO:Initializing load_model()
+2025-03-22 12:07:56,567:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:07:58,032:INFO:Initializing load_model()
+2025-03-22 12:07:58,032:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:08:07,639:INFO:Initializing load_model()
+2025-03-22 12:08:07,639:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:08:12,147:INFO:Initializing load_model()
+2025-03-22 12:08:12,147:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:08:30,666:INFO:Initializing load_model()
+2025-03-22 12:08:30,667:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:08:41,442:INFO:Initializing load_model()
+2025-03-22 12:08:41,442:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:08:41,621:INFO:Initializing load_model()
+2025-03-22 12:08:41,621:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:08:41,857:INFO:Initializing predict_model()
+2025-03-22 12:08:41,857:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001D1FD5EAD50>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['SeniorCitizen', 'tenure',
+                                             'MonthlyCharges'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=['customerID', 'gender', 'Partner',
+                                             'Dependents', 'PhoneServ...
+                                                                    'PaymentMethod'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['customerID', 'TotalCharges'],
+                                    transformer=TargetEncoder(cols=['customerID',
+                                                                    'TotalCharges'],
+                                                              handle_missing='return_nan'))),
+                ('trained_model',
+                 BaggingClassifier(estimator=KNeighborsClassifier(n_jobs=-1),
+                                   max_features=0.6, max_samples=0.4,
+                                   random_state=5440))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001D1FD0EEB60>)
+2025-03-22 12:08:41,858:INFO:Checking exceptions
+2025-03-22 12:08:41,858:INFO:Preloading libraries
+2025-03-22 12:08:41,858:INFO:Set up data.
+2025-03-22 12:08:41,866:INFO:Set up index.
+2025-03-22 12:09:36,171:INFO:Initializing load_model()
+2025-03-22 12:09:36,171:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:09:37,629:INFO:Initializing load_model()
+2025-03-22 12:09:37,629:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:09:50,914:INFO:Initializing load_model()
+2025-03-22 12:09:50,914:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:09:52,472:INFO:Initializing load_model()
+2025-03-22 12:09:52,472:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:09:58,037:INFO:Initializing load_model()
+2025-03-22 12:09:58,037:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:10:03,653:INFO:Initializing load_model()
+2025-03-22 12:10:03,653:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:10:14,160:INFO:Initializing load_model()
+2025-03-22 12:10:14,160:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:10:21,258:INFO:Initializing load_model()
+2025-03-22 12:10:21,258:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:10:21,446:INFO:Initializing load_model()
+2025-03-22 12:10:21,447:INFO:load_model(model_name=churn prediction knn, platform=None, authentication=None, verbose=True)
+2025-03-22 12:10:21,671:INFO:Initializing predict_model()
+2025-03-22 12:10:21,671:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001D1FD696AD0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['SeniorCitizen', 'tenure',
+                                             'MonthlyCharges'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=['customerID', 'gender', 'Partner',
+                                             'Dependents', 'PhoneServ...
+                                                                    'PaymentMethod'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('rest_encoding',
+                 TransformerWrapper(include=['customerID', 'TotalCharges'],
+                                    transformer=TargetEncoder(cols=['customerID',
+                                                                    'TotalCharges'],
+                                                              handle_missing='return_nan'))),
+                ('trained_model',
+                 BaggingClassifier(estimator=KNeighborsClassifier(n_jobs=-1),
+                                   max_features=0.6, max_samples=0.4,
+                                   random_state=5440))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001D1D5AFA480>)
+2025-03-22 12:10:21,671:INFO:Checking exceptions
+2025-03-22 12:10:21,672:INFO:Preloading libraries
+2025-03-22 12:10:21,673:INFO:Set up data.
+2025-03-22 12:10:21,685:INFO:Set up index.
