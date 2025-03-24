@@ -32,8 +32,8 @@ st.sidebar.download_button(
 )
 
 # Function to get user input
-st.sidebar.button('abs')(
-    def user_input_features():
+
+def user_input_features():
         #customerID = "0000-XXXX"  # Placeholder for customerID
         gender = st.selectbox('Gender', df['gender'].unique())
         SeniorCitizen = st.selectbox('Senior Citizen', df['SeniorCitizen'].unique())
@@ -95,7 +95,7 @@ st.sidebar.button('abs')(
         # Display prediction
         st.subheader('Prediction')
         st.write(prediction[['prediction_label', 'prediction_score']])
-)
+
 # Run the app
 if __name__ == '__main__':
     st.write('To start, please input your data and click the Predict button.')
