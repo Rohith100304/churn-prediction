@@ -9,33 +9,51 @@ model = load_model('churn prediction knn')
 df = pd.read_csv('churn prediction.csv')
 
 # Streamlit app
-st.title('Churn Prediction App')
+st.title('Customer Churn Prediction')
 
-# User input fields
-st.sidebar.header('User Input Features')
+if st.sidebar.button("View Dataset"):
+    with dataset_placeholder.container():
+        st.write("### Churn Prediction Dataset")
+        st.dataframe(df)
+
+# **Download Dataset Button**
+st.sidebar.download_button(
+    label="Download Dataset",
+    data=df.to_csv(index=False).encode("utf-8"),
+    file_name="churn_prediction.csv",
+    mime="text/csv"
+)
+
+# **Download Model Button**
+st.sidebar.download_button(
+    label="Download Model",
+    data=open("churn prediction knn.pkl", "rb"),
+    file_name="churn_prediction_knn.pkl",
+    mime="application/octet-stream"
+)
 
 # Function to get user input
 def user_input_features():
-    customerID = "0000-XXXX"  # Placeholder for customerID
-    gender = st.sidebar.selectbox('Gender', df['gender'].unique())
-    SeniorCitizen = st.sidebar.selectbox('Senior Citizen', df['SeniorCitizen'].unique())
-    Partner = st.sidebar.selectbox('Partner', df['Partner'].unique())
-    Dependents = st.sidebar.selectbox('Dependents', df['Dependents'].unique())
-    tenure = st.sidebar.number_input('Tenure', min_value=0, max_value=100, value=1)
-    PhoneService = st.sidebar.selectbox('Phone Service', df['PhoneService'].unique())
-    MultipleLines = st.sidebar.selectbox('Multiple Lines', df['MultipleLines'].unique())
-    InternetService = st.sidebar.selectbox('Internet Service', df['InternetService'].unique())
-    OnlineSecurity = st.sidebar.selectbox('Online Security', df['OnlineSecurity'].unique())
-    OnlineBackup = st.sidebar.selectbox('Online Backup', df['OnlineBackup'].unique())
-    DeviceProtection = st.sidebar.selectbox('Device Protection', df['DeviceProtection'].unique())
-    TechSupport = st.sidebar.selectbox('Tech Support', df['TechSupport'].unique())
-    StreamingTV = st.sidebar.selectbox('Streaming TV', df['StreamingTV'].unique())
-    StreamingMovies = st.sidebar.selectbox('Streaming Movies', df['StreamingMovies'].unique())
-    Contract = st.sidebar.selectbox('Contract', df['Contract'].unique())
-    PaperlessBilling = st.sidebar.selectbox('Paperless Billing', df['PaperlessBilling'].unique())
-    PaymentMethod = st.sidebar.selectbox('Payment Method', df['PaymentMethod'].unique())
-    MonthlyCharges = st.sidebar.number_input('Monthly Charges', min_value=0.0, max_value=200.0, value=50.0)
-    TotalCharges = st.sidebar.number_input('Total Charges', min_value=0.0, max_value=10000.0, value=1000.0)
+    #customerID = "0000-XXXX"  # Placeholder for customerID
+    gender = st.selectbox('Gender', df['gender'].unique())
+    SeniorCitizen = st.selectbox('Senior Citizen', df['SeniorCitizen'].unique())
+    Partner = st.selectbox('Partner', df['Partner'].unique())
+    Dependents = st.selectbox('Dependents', df['Dependents'].unique())
+    tenure = st.number_input('Tenure', min_value=0, max_value=100, value=1)
+    PhoneService = st.selectbox('Phone Service', df['PhoneService'].unique())
+    MultipleLines = st.selectbox('Multiple Lines', df['MultipleLines'].unique())
+    InternetService = st.selectbox('Internet Service', df['InternetService'].unique())
+    OnlineSecurity = st.selectbox('Online Security', df['OnlineSecurity'].unique())
+    OnlineBackup = st.selectbox('Online Backup', df['OnlineBackup'].unique())
+    DeviceProtection = st.selectbox('Device Protection', df['DeviceProtection'].unique())
+    TechSupport = st.selectbox('Tech Support', df['TechSupport'].unique())
+    StreamingTV = st.selectbox('Streaming TV', df['StreamingTV'].unique())
+    StreamingMovies = st.selectbox('Streaming Movies', df['StreamingMovies'].unique())
+    Contract = st.selectbox('Contract', df['Contract'].unique())
+    PaperlessBilling = st.selectbox('Paperless Billing', df['PaperlessBilling'].unique())
+    PaymentMethod = st.selectbox('Payment Method', df['PaymentMethod'].unique())
+    MonthlyCharges = st.number_input('Monthly Charges', min_value=0.0, max_value=200.0, value=50.0)
+    TotalCharges = st.number_input('Total Charges', min_value=0.0, max_value=10000.0, value=1000.0)
 
     data = {
         'customerID': customerID,  # Add customerID as a placeholder
@@ -80,4 +98,3 @@ if st.sidebar.button('Predict'):
 
 # Run the app
 if __name__ == '__main__':
-    st.write('To start, please input your data on the left sidebar and click the Predict button.')
