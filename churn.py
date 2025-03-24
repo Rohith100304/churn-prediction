@@ -98,3 +98,4 @@ if st.sidebar.button('Predict'):
 
 # Run the app
 if __name__ == '__main__':
+    st.write('To start, please input your data and click the Predict button.')
