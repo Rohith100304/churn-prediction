@@ -1,4 +1,4 @@
-import streamlit as st
+'''import streamlit as st
 import pandas as pd
 import pickle
 from pycaret.classification import load_model
@@ -110,3 +110,115 @@ if st.button('Predict'):
 # Run the app
 if __name__ == '__main__':
     st.write('To start, please input your data on the left sidebar and click the Predict button.')
+'''
+import streamlit as st
+import pandas as pd
+import pickle
+from pycaret.classification import load_model, predict_model
+
+# Load the pre-trained model
+model = load_model('churn prediction knn')
+
+# Save the model as a pickle file (if not already saved)
+model_filename = "churn_prediction_knn.pkl"
+with open(model_filename, "wb") as model_file:
+    pickle.dump(model, model_file)
+
+# Load the dataset
+df = pd.read_csv("churn prediction.csv")
+
+# Streamlit app title
+st.title("Customer Churn Prediction")
+
+# **Placeholder for dataset (Fixing Layout Issue)**
+dataset_placeholder = st.empty()
+
+# Sidebar controls
+st.sidebar.header("Options")
+
+# 1st Button - View Dataset (Using st.empty() to control position)
+if st.sidebar.button("View Dataset"):
+    dataset_placeholder.write("### Churn Prediction Dataset")
+    dataset_placeholder.dataframe(df)
+
+# 2nd Button - Download Dataset
+st.sidebar.download_button(
+    label="Download Dataset",
+    data=df.to_csv(index=False).encode(),
+    file_name="churn_prediction.csv",
+    mime="text/csv"
+)
+
+# 3rd Button - Download Model
+with open(model_filename, "rb") as model_file:
+    st.sidebar.download_button(
+        label="Download Model",
+        data=model_file,
+        file_name="churn_prediction_knn.pkl",
+        mime="application/octet-stream"
+    )
+
+# **Function to get user input from Sidebar**
+def user_input_features():
+    st.sidebar.subheader("Enter Customer Details")
+
+    gender = st.sidebar.selectbox('Gender', df['gender'].unique())
+    SeniorCitizen = st.sidebar.selectbox('Senior Citizen', df['SeniorCitizen'].unique())
+    Partner = st.sidebar.selectbox('Partner', df['Partner'].unique())
+    Dependents = st.sidebar.selectbox('Dependents', df['Dependents'].unique())
+    tenure = st.sidebar.number_input('Tenure', min_value=0, max_value=100, value=1)
+    PhoneService = st.sidebar.selectbox('Phone Service', df['PhoneService'].unique())
+    MultipleLines = st.sidebar.selectbox('Multiple Lines', df['MultipleLines'].unique())
+    InternetService = st.sidebar.selectbox('Internet Service', df['InternetService'].unique())
+    OnlineSecurity = st.sidebar.selectbox('Online Security', df['OnlineSecurity'].unique())
+    OnlineBackup = st.sidebar.selectbox('Online Backup', df['OnlineBackup'].unique())
+    DeviceProtection = st.sidebar.selectbox('Device Protection', df['DeviceProtection'].unique())
+    TechSupport = st.sidebar.selectbox('Tech Support', df['TechSupport'].unique())
+    StreamingTV = st.sidebar.selectbox('Streaming TV', df['StreamingTV'].unique())
+    StreamingMovies = st.sidebar.selectbox('Streaming Movies', df['StreamingMovies'].unique())
+    Contract = st.sidebar.selectbox('Contract', df['Contract'].unique())
+    PaperlessBilling = st.sidebar.selectbox('Paperless Billing', df['PaperlessBilling'].unique())
+    PaymentMethod = st.sidebar.selectbox('Payment Method', df['PaymentMethod'].unique())
+    MonthlyCharges = st.sidebar.number_input('Monthly Charges', min_value=0.0, max_value=200.0, value=50.0)
+    TotalCharges = st.sidebar.number_input('Total Charges', min_value=0.0, max_value=10000.0, value=1000.0)
+
+    data = {
+        'gender': gender,
+        'SeniorCitizen': SeniorCitizen,
+        'Partner': Partner,
+        'Dependents': Dependents,
+        'tenure': tenure,
+        'PhoneService': PhoneService,
+        'MultipleLines': MultipleLines,
+        'InternetService': InternetService,
+        'OnlineSecurity': OnlineSecurity,
+        'OnlineBackup': OnlineBackup,
+        'DeviceProtection': DeviceProtection,
+        'TechSupport': TechSupport,
+        'StreamingTV': StreamingTV,
+        'StreamingMovies': StreamingMovies,
+        'Contract': Contract,
+        'PaperlessBilling': PaperlessBilling,
+        'PaymentMethod': PaymentMethod,
+        'MonthlyCharges': MonthlyCharges,
+        'TotalCharges': TotalCharges
+    }
+    return pd.DataFrame(data, index=[0])
+
+# Get user input (Sidebar)
+input_df = user_input_features()
+
+# **Predict Button in Sidebar**
+if st.sidebar.button('Predict'):
+    prediction = predict_model(model, data=input_df)
+    
+    # Display prediction results in a fixed area
+    st.subheader('Prediction Results')
+    st.write(prediction[['prediction_label', 'prediction_score']])
+
+# Main Page Content (Remains Fixed)
+st.write("### Welcome to the Churn Prediction App!")
+st.write(
+    "Use the sidebar to **view the dataset, download files, and enter customer details**. "
+    "Click **Predict** to check churn probability!"
+)
