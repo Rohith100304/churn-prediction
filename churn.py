@@ -22,10 +22,10 @@ st.sidebar.download_button(
     file_name="churn_prediction.csv",
     mime="text/csv"
 )
-with open(model, "rb") as model_file:
-    st.sidebar.download_button(
+
+st.sidebar.download_button(
         label="Download Model",
-        data=model_file,
+        data=model,
         file_name="churn_prediction_knn.pkl",
         mime="application/octet-stream"
     )
