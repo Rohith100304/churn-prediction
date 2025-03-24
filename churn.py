@@ -11,8 +11,18 @@ df = pd.read_csv('churn prediction.csv')
 # Streamlit app
 st.title('Customer Churn Prediction')
 
-# User input fields
-st.sidebar.header('User Input Features')
+if st.sidebar.button("View Dataset"):
+    st.write("### Churn Prediction Dataset")
+    st.dataframe(df)
+
+# 2nd Button - Download Dataset
+st.sidebar.download_button(
+    label="Download Dataset",
+    data=df.to_csv(index=False).encode(),
+    file_name="churn_prediction.csv",
+    mime="text/csv"
+)
+#st.sidebar.header('User Input Features')
 
 # Function to get user input
 def user_input_features():
