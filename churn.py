@@ -34,7 +34,7 @@ st.sidebar.download_button(
 # Function to get user input
 
 def user_input_features():
-        #customerID = "0000-XXXX"  # Placeholder for customerID
+        customerID = "0000-XXXX"  # Placeholder for customerID
         gender = st.selectbox('Gender', df['gender'].unique())
         SeniorCitizen = st.selectbox('Senior Citizen', df['SeniorCitizen'].unique())
         Partner = st.selectbox('Partner', df['Partner'].unique())
