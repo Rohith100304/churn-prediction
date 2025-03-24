@@ -80,21 +80,21 @@ def user_input_features():
         features = pd.DataFrame(data, index=[0])
         return features
     
-    # Get user input
-    input_df = user_input_features()
+    # Get user input\
+input_df = user_input_features()
     
     # Display user input
-    st.subheader('User Input features')
-    st.write(input_df)
+st.subheader('User Input features')
+st.write(input_df)
     
     # Predict button
-    if st.sidebar.button('Predict'):
+if st.sidebar.button('Predict'):
         # Make prediction
-        prediction = predict_model(model, data=input_df)
+    prediction = predict_model(model, data=input_df)
         
         # Display prediction
-        st.subheader('Prediction')
-        st.write(prediction[['prediction_label', 'prediction_score']])
+    st.subheader('Prediction')
+    st.write(prediction[['prediction_label', 'prediction_score']])
 
 # Run the app
 if __name__ == '__main__':
