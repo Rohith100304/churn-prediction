@@ -1,16 +1,26 @@
 import streamlit as st
 import pandas as pd
-from pycaret.classification import load_model, predict_model
+import pickle
+from pycaret.classification import load_model
 
 # Load the pre-trained model
 model = load_model('churn prediction knn')
 
-# Load the dataset to get column names and unique values
-df = pd.read_csv('churn prediction.csv')
+# Save the model as a pickle file (if not already saved)
+model_filename = "churn_prediction_knn.pkl"
+with open(model_filename, "wb") as model_file:
+    pickle.dump(model, model_file)
+
+# Load the dataset
+df = pd.read_csv("churn prediction.csv")
 
 # Streamlit app
-st.title('Customer Churn Prediction')
+st.title("Customer Churn Prediction")
 
+# Sidebar buttons
+st.sidebar.header("Options")
+
+# 1st Button - View Dataset
 if st.sidebar.button("View Dataset"):
     st.write("### Churn Prediction Dataset")
     st.dataframe(df)
@@ -23,13 +33,14 @@ st.sidebar.download_button(
     mime="text/csv"
 )
 
-st.sidebar.download_button(
+# 3rd Button - Download Model
+with open(model_filename, "rb") as model_file:
+    st.sidebar.download_button(
         label="Download Model",
-        data=model,
+        data=model_file,
         file_name="churn_prediction_knn.pkl",
         mime="application/octet-stream"
     )
-
 # Function to get user input
 def user_input_features():
     customerID = "0000-XXXX"  # Placeholder for customerID
