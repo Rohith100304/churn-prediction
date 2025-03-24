@@ -12,9 +12,8 @@ df = pd.read_csv('churn prediction.csv')
 st.title('Customer Churn Prediction')
 
 if st.sidebar.button("View Dataset"):
-    with dataset_placeholder.container():
-        st.write("### Churn Prediction Dataset")
-        st.dataframe(df)
+    st.write("### Churn Prediction Dataset")
+    st.dataframe(df)
 
 # **Download Dataset Button**
 st.sidebar.download_button(
