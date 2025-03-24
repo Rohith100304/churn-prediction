@@ -71,46 +71,46 @@ if st.sidebar.button("Predict Data"):
         MonthlyCharges = st.number_input('Monthly Charges', min_value=0.0, max_value=200.0, value=50.0)
         TotalCharges = st.number_input('Total Charges', min_value=0.0, max_value=10000.0, value=1000.0)
 
-    data = {
-        'customerID': customerID,  # Add customerID as a placeholder
-        'gender': gender,
-        'SeniorCitizen': SeniorCitizen,
-        'Partner': Partner,
-        'Dependents': Dependents,
-        'tenure': tenure,
-        'PhoneService': PhoneService,
-        'MultipleLines': MultipleLines,
-        'InternetService': InternetService,
-        'OnlineSecurity': OnlineSecurity,
-        'OnlineBackup': OnlineBackup,
-        'DeviceProtection': DeviceProtection,
-        'TechSupport': TechSupport,
-        'StreamingTV': StreamingTV,
-        'StreamingMovies': StreamingMovies,
-        'Contract': Contract,
-        'PaperlessBilling': PaperlessBilling,
-        'PaymentMethod': PaymentMethod,
-        'MonthlyCharges': MonthlyCharges,
-        'TotalCharges': TotalCharges
-    }
-    features = pd.DataFrame(data, index=[0])
-    return features
-
-# Get user input
-input_df = user_input_features()
-
-# Display user input
-st.subheader('User Input features')
-st.write(input_df)
-
-# Predict button
-if st.button('Predict'):
-    # Make prediction
-    prediction = predict_model(model, data=input_df)
+        data = {
+            'customerID': customerID,  # Add customerID as a placeholder
+            'gender': gender,
+            'SeniorCitizen': SeniorCitizen,
+            'Partner': Partner,
+            'Dependents': Dependents,
+            'tenure': tenure,
+            'PhoneService': PhoneService,
+            'MultipleLines': MultipleLines,
+            'InternetService': InternetService,
+            'OnlineSecurity': OnlineSecurity,
+            'OnlineBackup': OnlineBackup,
+            'DeviceProtection': DeviceProtection,
+            'TechSupport': TechSupport,
+            'StreamingTV': StreamingTV,
+            'StreamingMovies': StreamingMovies,
+            'Contract': Contract,
+            'PaperlessBilling': PaperlessBilling,
+            'PaymentMethod': PaymentMethod,
+            'MonthlyCharges': MonthlyCharges,
+            'TotalCharges': TotalCharges
+        }
+        features = pd.DataFrame(data, index=[0])
+        return features
     
-    # Display prediction
-    st.subheader('Prediction')
-    st.write(prediction[['prediction_label', 'prediction_score']])
+    # Get user input
+    input_df = user_input_features()
+    
+    # Display user input
+    st.subheader('User Input features')
+    st.write(input_df)
+    
+    # Predict button
+    if st.button('Predict'):
+        # Make prediction
+        prediction = predict_model(model, data=input_df)
+        
+        # Display prediction
+        st.subheader('Prediction')
+        st.write(prediction[['prediction_label', 'prediction_score']])
 # **Main Page Content (Static, Unaffected by Buttons)**
 #st.write("### Welcome to the Churn Prediction App!")
 #st.write(
