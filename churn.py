@@ -88,7 +88,7 @@ st.subheader('User Input features')
 st.write(input_df)
     
     # Predict button
-if st.sidebar.button('Predict'):
+if st.button('Predict'):
         # Make prediction
     prediction = predict_model(model, data=input_df)
         
