@@ -22,7 +22,13 @@ st.sidebar.download_button(
     file_name="churn_prediction.csv",
     mime="text/csv"
 )
-#st.sidebar.header('User Input Features')
+with open(model_path, "rb") as model_file:
+    st.sidebar.download_button(
+        label="Download Model",
+        data=model_file,
+        file_name="churn_prediction_knn.pkl",
+        mime="application/octet-stream"
+    )
 
 # Function to get user input
 def user_input_features():
