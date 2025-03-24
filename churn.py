@@ -9,7 +9,7 @@ model = load_model('churn prediction knn')
 df = pd.read_csv('churn prediction.csv')
 
 # Streamlit app
-st.title('Churn Prediction App')
+st.title('Customer Churn Prediction')
 
 # User input fields
 st.sidebar.header('User Input Features')
