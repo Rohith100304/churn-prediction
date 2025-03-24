@@ -18,10 +18,11 @@ df = pd.read_csv("churn prediction.csv")
 st.title("Customer Churn Prediction")
 
 # Sidebar buttons
+d=st.empty()
 st.sidebar.header("Options")
 
 # 1st Button - View Dataset
-d=st.empty()
+
 if st.sidebar.button("View Dataset"):
     d.write("### Churn Prediction Dataset")
     d.dataframe(df)
