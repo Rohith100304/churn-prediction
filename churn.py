@@ -102,8 +102,10 @@ if st.sidebar.button("Predict Data"):
         # Predict Button
         if st.button("Predict"):
             prediction = predict_model(model, data=input_data)
-            prediction_placeholder.subheader("Prediction Result")
-            prediction_placeholder.write(prediction[['prediction_label', 'prediction_score']])
+            #prediction_placeholder.subheader("Prediction Result")
+            #prediction_placeholder.write(prediction[['prediction_label', 'prediction_score']])
+            st.subheader('Prediction')
+            st.write(prediction[['prediction_label', 'prediction_score']])
 
 # **Main Page Content (Static, Unaffected by Buttons)**
 #st.write("### Welcome to the Churn Prediction App!")
