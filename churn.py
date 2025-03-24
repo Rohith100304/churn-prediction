@@ -48,7 +48,7 @@ with open(model_filename, "rb") as model_file:
     )
 
 # **ABC Button (Displays User Input Form)**
-if st.sidebar.button("Predict"):
+if st.sidebar.button("Predict Data"):
     with input_form_placeholder.container():
         st.write("### Enter Customer Details")
         
