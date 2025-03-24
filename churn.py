@@ -21,9 +21,10 @@ st.title("Customer Churn Prediction")
 st.sidebar.header("Options")
 
 # 1st Button - View Dataset
+d=st.empty()
 if st.sidebar.button("View Dataset"):
-    st.write("### Churn Prediction Dataset")
-    st.dataframe(df)
+    d.write("### Churn Prediction Dataset")
+    d.dataframe(df)
 
 # 2nd Button - Download Dataset
 st.sidebar.download_button(
