@@ -50,26 +50,26 @@ with open(model_filename, "rb") as model_file:
 # **ABC Button (Displays User Input Form)**
 if st.sidebar.button("Predict Data"):
     def user_input_features():
-    #customerID = "0000-XXXX"  # Placeholder for customerID
-    gender = st.selectbox('Gender', df['gender'].unique())
-    SeniorCitizen = st.selectbox('Senior Citizen', df['SeniorCitizen'].unique())
-    Partner = st.selectbox('Partner', df['Partner'].unique())
-    Dependents = st.selectbox('Dependents', df['Dependents'].unique())
-    tenure = st.number_input('Tenure', min_value=0, max_value=100, value=1)
-    PhoneService = st.selectbox('Phone Service', df['PhoneService'].unique())
-    MultipleLines = st.selectbox('Multiple Lines', df['MultipleLines'].unique())
-    InternetService = st.selectbox('Internet Service', df['InternetService'].unique())
-    OnlineSecurity = st.selectbox('Online Security', df['OnlineSecurity'].unique())
-    OnlineBackup = st.selectbox('Online Backup', df['OnlineBackup'].unique())
-    DeviceProtection = st.selectbox('Device Protection', df['DeviceProtection'].unique())
-    TechSupport = st.selectbox('Tech Support', df['TechSupport'].unique())
-    StreamingTV = st.selectbox('Streaming TV', df['StreamingTV'].unique())
-    StreamingMovies = st.selectbox('Streaming Movies', df['StreamingMovies'].unique())
-    Contract = st.selectbox('Contract', df['Contract'].unique())
-    PaperlessBilling = st.selectbox('Paperless Billing', df['PaperlessBilling'].unique())
-    PaymentMethod = st.selectbox('Payment Method', df['PaymentMethod'].unique())
-    MonthlyCharges = st.number_input('Monthly Charges', min_value=0.0, max_value=200.0, value=50.0)
-    TotalCharges = st.number_input('Total Charges', min_value=0.0, max_value=10000.0, value=1000.0)
+        customerID = "0000-XXXX"  # Placeholder for customerID
+        gender = st.selectbox('Gender', df['gender'].unique())
+        SeniorCitizen = st.selectbox('Senior Citizen', df['SeniorCitizen'].unique())
+        Partner = st.selectbox('Partner', df['Partner'].unique())
+        Dependents = st.selectbox('Dependents', df['Dependents'].unique())
+        tenure = st.number_input('Tenure', min_value=0, max_value=100, value=1)
+        PhoneService = st.selectbox('Phone Service', df['PhoneService'].unique())
+        MultipleLines = st.selectbox('Multiple Lines', df['MultipleLines'].unique())
+        InternetService = st.selectbox('Internet Service', df['InternetService'].unique())
+        OnlineSecurity = st.selectbox('Online Security', df['OnlineSecurity'].unique())
+        OnlineBackup = st.selectbox('Online Backup', df['OnlineBackup'].unique())
+        DeviceProtection = st.selectbox('Device Protection', df['DeviceProtection'].unique())
+        TechSupport = st.selectbox('Tech Support', df['TechSupport'].unique())
+        StreamingTV = st.selectbox('Streaming TV', df['StreamingTV'].unique())
+        StreamingMovies = st.selectbox('Streaming Movies', df['StreamingMovies'].unique())
+        Contract = st.selectbox('Contract', df['Contract'].unique())
+        PaperlessBilling = st.selectbox('Paperless Billing', df['PaperlessBilling'].unique())
+        PaymentMethod = st.selectbox('Payment Method', df['PaymentMethod'].unique())
+        MonthlyCharges = st.number_input('Monthly Charges', min_value=0.0, max_value=200.0, value=50.0)
+        TotalCharges = st.number_input('Total Charges', min_value=0.0, max_value=10000.0, value=1000.0)
 
     data = {
         'customerID': customerID,  # Add customerID as a placeholder
