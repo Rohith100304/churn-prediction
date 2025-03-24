@@ -11,21 +11,21 @@ df = pd.read_csv("churn prediction.csv")
 # Streamlit app title
 st.title("Customer Churn Prediction")
 
-# **Placeholders to control dynamic content**
+# **Placeholders to prevent content shifting**
 dataset_placeholder = st.empty()
 input_form_placeholder = st.empty()
 prediction_placeholder = st.empty()
 
-# Sidebar controls
+# **Sidebar Controls**
 st.sidebar.header("Options")
 
-# **1st Button - View Dataset (Prevents content shifting)**
+# **View Dataset Button**
 if st.sidebar.button("View Dataset"):
     with dataset_placeholder.container():
         st.write("### Churn Prediction Dataset")
         st.dataframe(df)
 
-# **2nd Button - Download Dataset**
+# **Download Dataset Button**
 st.sidebar.download_button(
     label="Download Dataset",
     data=df.to_csv(index=False).encode("utf-8"),
@@ -33,7 +33,7 @@ st.sidebar.download_button(
     mime="text/csv"
 )
 
-# **3rd Button - Download Model**
+# **Download Model Button**
 st.sidebar.download_button(
     label="Download Model",
     data=open("churn prediction knn.pkl", "rb"),
@@ -45,7 +45,7 @@ st.sidebar.download_button(
 if st.sidebar.button("ABC"):
     with input_form_placeholder.container():
         st.write("### Enter Customer Details")
-        
+
         # **Customer Input Fields**
         gender = st.selectbox('Gender', df['gender'].unique())
         SeniorCitizen = st.selectbox('Senior Citizen', df['SeniorCitizen'].unique())
@@ -97,11 +97,14 @@ if st.sidebar.button("ABC"):
         # **Predict Button**
         if st.button("Predict"):
             prediction = predict_model(model, data=input_data)
+
+            # **Display Prediction Result**
             with prediction_placeholder.container():
                 st.subheader("Prediction Result")
-                st.write(prediction[['prediction_label', 'prediction_score']])
+                st.write(f"**Churn Prediction:** {prediction['prediction_label'].values[0]}")
+                st.write(f"**Confidence Score:** {prediction['prediction_score'].values[0]:.2f}")
 
-# **Main Page Content (Static)**
+# **Main Page Content**
 st.write("### Welcome to the Churn Prediction App!")
 st.write(
     "Use the sidebar to **view the dataset, download files, and access customer details**. "
